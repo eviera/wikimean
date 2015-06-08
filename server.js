@@ -4,8 +4,9 @@ var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
-// config
-var db = require('./configure/db');
+// config (permite usar db.url, que es lo que exporta db.js)
+var db = require('./config/db');
+
 
 // setup del port
 var port = process.env.PORT || 8080;
