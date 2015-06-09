@@ -1,45 +1,47 @@
-// modulos
 var express = require('express');
-var app = express();
+var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var _ = require('lodash');
 
-// config (permite usar db.url, que es lo que exporta db.js)
-var db = require('./config/db');
+var app = express();
 
+// set the static files location /client/img will be /img for users
+app.use(express.static(__dirname + '/client'));
+ 
 
-// setup del port
-var port = process.env.PORT || 8080;
-
-// connect to our mongoDB database
-// (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url);
-
-// get all data/stuff of the body (POST) parameters
-// parse application/json
+// Add Middleware necessary for REST API's
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
-// parse application/vnd.api+json as json
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 app.use(methodOverride('X-HTTP-Method-Override'));
 
-// set the static files location /public/img will be /img for users
-app.use(express.static(__dirname + '/public'));
+// CORS Support
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
-// routes ==================================================
-require('./app/routes')(app); // configure our routes
 
-// start app ===============================================
-// startup our app at http://localhost:8080
-app.listen(port);
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost/wikimean');
+mongoose.connection.once('open', function() {
 
-// shoutout to the user
-console.log('Magic happens on port ' + port);
+  // Load the models.
+  app.models = require('./server/models/index');
 
-// expose app
-exports = module.exports = app;
+  // Load the routes.
+  var routes = require('./server/routes');
+  _.each(routes, function(controller, route) {
+    app.use(route, controller(app, route));
+  });
+
+  app.get('*', function(req, res) {
+    res.redirect('/#' + req.originalUrl);
+  });
+
+  console.log('Server ready and listening on port 3000...');
+
+  app.listen(3000);
+});
