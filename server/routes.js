@@ -1,3 +1,3 @@
 module.exports = {
-  '/article': require('./controllers/ArticleController')
+  '/article' : require('./controllers/ArticleRESTController')
 };
