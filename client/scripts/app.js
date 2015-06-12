@@ -11,15 +11,10 @@ angular
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/articles', {
-        templateUrl: 'views/articles.html',
-        controller: 'ArticlesCtrl'
+        templateUrl: 'views/wiki.html',
+        controller: 'wikiCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
 });
-
