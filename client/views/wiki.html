@@ -1,3 +1,4 @@
-<div class="jumbotron text-center">
-    <h1>wiki</h1>
+<div ng-repeat="article in articles">
+    <h2><a href="#/article/{{article._id}}">{{article.title}}</a></h2>
+    <p>{{article.content}}</p>
 </div>
