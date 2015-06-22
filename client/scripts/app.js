@@ -3,11 +3,12 @@
 angular
   .module('wikimeanApp', [
     'ngRoute',
-    'restangular'
+    'restangular',
+    'ngSanitize'
   ])
   .config(function ($routeProvider, RestangularProvider) {
 
-    RestangularProvider.setBaseUrl('http://localhost:3000');
+    RestangularProvider.setBaseUrl('http://localhost:3000/rest');
 
     $routeProvider
       .when('/', {
@@ -28,8 +29,11 @@ angular
       RestangularConfigurer.setRestangularFields({
         id: '_id'
       });
-    });
+    })
   })
-  .factory('ArticleService', function(ArticleRestangular) {
-    return ArticleRestangular.service('rest/article'); //apunta a la url /rest/article
+  .filter('textiler', function() {
+      return function(input)  {
+        input = input || '';
+        return textile(input);
+      };
   });
