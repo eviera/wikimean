@@ -13,7 +13,7 @@ ToDo
   * header bootstrap (bg violeta fg naranja ?)
   * izq. zona con los ultimos 10 titulos ordenados fecha desc y link a 'mas' para ver el resto  (violeta)
     * puede ser un ng-include que adentro tenga un controller propio
-    * sino puede ser una directiva customizada, como <sidebar/> (la directiva tiene una propiedad controller para asignarle un controller aparte)
+    * sino puede ser una directiva customizada, como < sidebar /> (la directiva tiene una propiedad controller para asignarle un controller aparte)
   * centro con el ultimo articulo completo
   * footer con copyright y login
 * migrar articulos del sitio viejo
