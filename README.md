@@ -9,11 +9,11 @@ ToDo
 * ✓ filtro textile
 * campo con tags
 * diagramacion de pagina principal
-** tomar colores de https://www.materialpalette.com/deep-purple/orange
-** header bootstrap (bg violeta fg naranja ?)
-** izq. zona con los ultimos 10 titulos ordenados fecha desc y link a 'mas' para ver el resto  (violeta)
-** centro con el ultimo articulo completo
-** footer con copyright y login
+  * tomar colores de https://www.materialpalette.com/deep-purple/orange
+  * header bootstrap (bg violeta fg naranja ?)
+  * izq. zona con los ultimos 10 titulos ordenados fecha desc y link a 'mas' para ver el resto  (violeta)
+  * centro con el ultimo articulo completo
+  * footer con copyright y login
 * migrar articulos del sitio viejo
 * filtro para youtube
 * pagina del articulo
