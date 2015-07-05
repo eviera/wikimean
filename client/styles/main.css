@@ -4380,7 +4380,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffad33;
+  color: #ff9800;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
@@ -6547,24 +6547,23 @@ button.close {
     display: none !important;
   }
 }
-/*
- Customizaciones de bootstrap
-*/
-/*
- navbar basado en http://work.smarchal.com/twbscolor/css/512da89565eeffffffd4c2f60
-*/
+/* COM:Customizaciones de bootstrap */
 .navbar-default {
   font-family: "Oswald";
   margin-bottom: 0px;
 }
-/*
-
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #FF9800;
+/* FIN:Customizaciones de bootstrap */
+html {
+  position: relative;
+  min-height: 100%;
 }
-
-.navbar-default ul.nav.navbar-nav li.active a {
-  background-color: #9565ee;
-  color: #d4c2f6;
+body {
+  margin-bottom: 60px;
 }
-*/
+.footer {
+  background-color: #f5f2fc;
+  position: absolute;
+  bottom: 0;
+  border-radius: 4px;
+  height: 60px;
+}
