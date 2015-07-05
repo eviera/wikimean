@@ -6553,17 +6553,27 @@ button.close {
   margin-bottom: 0px;
 }
 /* FIN:Customizaciones de bootstrap */
-html {
-  position: relative;
-  min-height: 100%;
-}
 body {
-  margin-bottom: 60px;
+  background-color: #ffff99;
+}
+.central {
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: #1aff1a;
+}
+.sidebar {
+  border-radius: 4px;
+  background-color: #ff9999;
+  padding-top: 5px;
+  padding-bottom: 50px;
+}
+.sidebar-container {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .footer {
+  margin-top: 10px;
   background-color: #f5f2fc;
-  position: absolute;
-  bottom: 0;
   border-radius: 4px;
   height: 60px;
 }

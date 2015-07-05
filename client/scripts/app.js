@@ -31,6 +31,16 @@ angular
       });
     })
   })
+  .directive('sidebar', function() {
+    return {
+      restrict: 'E',
+      scope: {
+        src: '='
+      },
+      controller: 'sidebarCtrl',
+      templateUrl: 'views/sidebar.html'
+    };
+  })  
   .filter('textiler', function() {
       return function(input)  {
         input = input || '';

@@ -1,5 +1,5 @@
-<div class="row">
-	<div class="col-md-10 col-xs-12">
+<div class="clearfix">
+	<div class="col-md-10">
 		<div ng-repeat="article in articles">
 		    <h2><a href="#/article/{{article._id}}">{{article.title}}</a></h2>
 		    <span ng-bind-html="article.content | textiler"></span>
@@ -7,12 +7,7 @@
 		    <p>{{article.modified}}</p>
 		</div>
 	</div>
-	<div class="col-md-2" style="background: red;">
-		<ul>
-			<li>uno</li>
-			<li>dos</li>
-			<li>tres</li>
-			<li>uno</li>
-		</ul>
+	<div class="col-md-2 sidebar-container">
+		<sidebar></sidebar>
 	</div>
 </div>
