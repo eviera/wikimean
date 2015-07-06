@@ -4372,8 +4372,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #512da8;
-  border-color: #44268e;
+  background-color: #673dcb;
+  border-color: #5831b6;
 }
 .navbar-default .navbar-brand {
   color: #ff9800;
@@ -4398,7 +4398,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #d4c2f6;
-  background-color: #673dcb;
+  background-color: #8665d6;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -4418,12 +4418,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #44268e;
+  border-color: #5831b6;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #673dcb;
+  background-color: #8665d6;
   color: #d4c2f6;
 }
 @media (max-width: 767px) {
@@ -4439,7 +4439,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #d4c2f6;
-    background-color: #673dcb;
+    background-color: #8665d6;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -6554,26 +6554,38 @@ button.close {
 }
 /* FIN:Customizaciones de bootstrap */
 body {
-  background-color: #ffff99;
+  background-color: #0097a7;
+}
+h2 {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .central {
   margin-top: 10px;
   border-radius: 4px;
-  background-color: #1aff1a;
+  background-color: #fff;
+}
+.article {
+  margin: 10px 5px 10px 5px;
+  padding: 5px 5px 5px 5px;
+  background-color: #f0f0f0;
 }
 .sidebar {
+  margin-top: 10px;
   border-radius: 4px;
-  background-color: #ff9999;
+  background-color: #ff9800;
   padding-top: 5px;
   padding-bottom: 50px;
+  padding-left: 5px;
 }
 .sidebar-container {
   padding-left: 0px;
   padding-right: 0px;
 }
 .footer {
+  color: #ff9800;
   margin-top: 10px;
-  background-color: #f5f2fc;
+  background-color: #673dcb;
   border-radius: 4px;
   height: 60px;
 }

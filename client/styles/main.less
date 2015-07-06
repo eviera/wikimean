@@ -4,7 +4,7 @@
 @font-family-base: "Roboto";
 @navbar-default-brand-color: #FF9800;
 @navbar-default-brand-hover-color: @navbar-default-brand-color;
-@navbar-default-bg: #512da8;
+@navbar-default-bg: lighten(#512da8, 10%);
 @navbar-default-link-active-color: #d4c2f6;
 @navbar-default-link-active-bg: lighten(@navbar-default-bg, 10%);
 
@@ -15,25 +15,39 @@
 /* FIN:Customizaciones de bootstrap */
 
 @container-separation: 10px;
+@background-color: #0097A7;
 
 html {
 }
 
 body {
-	background-color: lighten(yellow, 30%);
+	background-color: @background-color;
+}
+
+h2 {
+	margin-top: 2px;
+	margin-bottom: 2px;
 }
 
 .central {
 	margin-top: @container-separation;
 	border-radius: 4px;
-	background-color: lighten(green, 30%);
+	background-color: #fff;
+}
+
+.article {
+	margin: 10px 5px 10px 5px;
+	padding: 5px 5px 5px 5px;
+	background-color: #f0f0f0;
 }
 
 .sidebar {
+	margin-top: 10px;
 	border-radius: 4px;
-	background-color: lighten(red, 30%);
+	background-color: @navbar-default-brand-color;
 	padding-top: 5px;
 	padding-bottom: 50px;
+	padding-left: 5px;
 }
 
 .sidebar-container {
@@ -42,8 +56,9 @@ body {
 }
 
 .footer {
+	color: @navbar-default-brand-color;
 	margin-top: @container-separation;
-	background-color:  lighten(@navbar-default-bg, 55%);
+	background-color:  @navbar-default-bg;
 	border-radius: 4px;
 	height: 60px;
 }
