@@ -4,45 +4,67 @@
     <meta charset="utf-8">
     <title>eviera.net</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+
   </head>
-  <body ng-app="wikimeanApp">
+  <body ng-app="wikimeanApp" class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">eviera.net</a>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
+          <div class="mdl-layout__header-row">
+            <h3>eviera.net</h3>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Wiki</a></li>
+          <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
+          <div class="mdl-layout--large-screen-only mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <a href="/#" class="mdl-layout__tab is-active">Wiki</a>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+              <i class="material-icons">add</i>
+            </button>
+          </div>
+      </header>
+
+      <main class="mdl-layout__content">
+
+        <div class="mdl-layout__tab-panel is-active" id="overview" ng-view=""></div>
+        <sidebar></sidebar>
+
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer--middle-section">
+            <div class="mdl-mega-footer--drop-down-section">
+              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer--heading">Features</h1>
+              <ul class="mdl-mega-footer--link-list">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Updates</a></li>
+              </ul>
+            </div>
+          <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+              More Information
+            </div>
+            <ul class="mdl-mega-footer--link-list">
+              <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy and Terms</a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
-      <div class="central" ng-view=""></div>
-
-      <footer class="footer">
-        <div class="container">
-          <p >Place sticky footer content here.</p>
-        </div>
-      </footer>
+          </div>
+        </footer>
+      </main>
 
     </div>
+
+
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -51,6 +73,7 @@
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
 
     <script src="scripts/libs/textile.js"></script>
     <script src="scripts/app.js"></script>

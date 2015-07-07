@@ -1,13 +1,23 @@
-<div class="clearfix">
-	<div class="col-md-10 article-list">
-		<div class="article" ng-repeat="article in articles">
-		    <h2><a href="#/article/{{article._id}}">{{article.title}}</a></h2>
-		    <span ng-bind-html="article.content | textiler"></span>
-		    <p>{{article.created}}</p>
-		    <p>{{article.modified}}</p>
-		</div>
-	</div>
-	<div class="col-md-2 sidebar-container">
-		<sidebar></sidebar>
-	</div>
-</div>
+<section ng-repeat="article in articles" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text">
+      <h4><a href="#/article/{{article._id}}">{{article.title}}</a></h4>
+      <span ng-bind-html="article.content | textiler"></span>
+      <p>{{article.created}}</p>
+      <p>{{article.modified}}</p>
+    </div>
+    <div class="mdl-card__actions">
+      <a href="#" class="mdl-button">Read our features</a>
+    </div>
+  </div>
+
+  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+    <i class="material-icons">more_vert</i>
+  </button>
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+    <li class="mdl-menu__item">Lorem</li>
+    <li class="mdl-menu__item" disabled>Ipsum</li>
+    <li class="mdl-menu__item">Dolor</li>
+  </ul>
+
+</section>
