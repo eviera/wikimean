@@ -7,15 +7,27 @@
 @navbar-default-bg: lighten(#512da8, 10%);
 @navbar-default-link-active-color: #d4c2f6;
 @navbar-default-link-active-bg: lighten(@navbar-default-bg, 10%);
+@navbar-height: 100px;
 
 .navbar-default {
 	font-family: "Oswald";
 	margin-bottom: 0px;
+	font-size: ceil((@font-size-base * 1.2));
 }
+.navbar-brand {
+	font-size: ceil((@font-size-base * 2));
+}
+.navbar-default .navbar-nav > .active > a {
+	margin-left: 30px;
+}
+
 /* FIN:Customizaciones de bootstrap */
 
-@container-separation: 10px;
-@background-color: #0097A7;
+//Mis constantes
+@container-separation: 0px;
+@background-color: #282828;
+@article-background-color: #F7F7F7;
+@footer-height: 120px;
 
 html {
 }
@@ -24,41 +36,53 @@ body {
 	background-color: @background-color;
 }
 
-h2 {
+h2, h3 {
+	font-family: "Oswald";
 	margin-top: 2px;
 	margin-bottom: 2px;
 }
 
 .central {
 	margin-top: @container-separation;
-	border-radius: 4px;
-	background-color: #fff;
+	padding-bottom: 30px;
+	background-color: #e0e0e0;
 }
 
-.article {
-	margin: 10px 5px 10px 5px;
-	padding: 5px 5px 5px 5px;
-	background-color: #f0f0f0;
+article {
+	margin: 20px 5px 10px 5px;
+  padding: 20px 15px 15px 15px;
+  background-color: @article-background-color;
+  border-radius: 5px;
+  border-width: 5px;
+  border-color: #fff;
+  border-style: solid;
 }
 
 .sidebar {
-	margin-top: 10px;
-	border-radius: 4px;
-	background-color: @navbar-default-brand-color;
+	margin-top: 20px;
 	padding-top: 5px;
 	padding-bottom: 50px;
 	padding-left: 5px;
+	background-color: @article-background-color;
+	border-radius: 5px;
+	border-width: 5px;
+	border-color: #fff;
+	border-style: solid;
 }
 
-.sidebar-container {
-	padding-left: 0px;
-	padding-right: 0px;
+.sidebar h3 {
+	margin: 0 auto 20px auto;
+	text-align: center;
 }
 
 .footer {
+	padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
 	color: @navbar-default-brand-color;
 	margin-top: @container-separation;
-	background-color:  @navbar-default-bg;
-	border-radius: 4px;
-	height: 60px;
+	background-color: #373737;
+	height: @footer-height;
 }

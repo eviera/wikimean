@@ -4047,7 +4047,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 100px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -4153,10 +4153,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 40px 15px;
   font-size: 18px;
   line-height: 20px;
-  height: 50px;
+  height: 100px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4176,8 +4176,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 33px;
+  margin-bottom: 33px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
@@ -4201,7 +4201,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 20px -15px;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -4239,8 +4239,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 .navbar-form {
@@ -4251,8 +4251,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 33px;
+  margin-bottom: 33px;
 }
 @media (min-width: 768px) {
   .navbar-form .form-group {
@@ -4337,20 +4337,20 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-bottom-left-radius: 0;
 }
 .navbar-btn {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 33px;
+  margin-bottom: 33px;
 }
 .navbar-btn.btn-sm {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 .navbar-btn.btn-xs {
-  margin-top: 14px;
-  margin-bottom: 14px;
+  margin-top: 39px;
+  margin-bottom: 39px;
 }
 .navbar-text {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 @media (min-width: 768px) {
   .navbar-text {
@@ -6551,41 +6551,61 @@ button.close {
 .navbar-default {
   font-family: "Oswald";
   margin-bottom: 0px;
+  font-size: 17px;
+}
+.navbar-brand {
+  font-size: 28px;
+}
+.navbar-default .navbar-nav > .active > a {
+  margin-left: 30px;
 }
 /* FIN:Customizaciones de bootstrap */
 body {
-  background-color: #0097a7;
+  background-color: #282828;
 }
-h2 {
+h2,
+h3 {
+  font-family: "Oswald";
   margin-top: 2px;
   margin-bottom: 2px;
 }
 .central {
-  margin-top: 10px;
-  border-radius: 4px;
-  background-color: #fff;
+  margin-top: 0px;
+  padding-bottom: 30px;
+  background-color: #e0e0e0;
 }
-.article {
-  margin: 10px 5px 10px 5px;
-  padding: 5px 5px 5px 5px;
-  background-color: #f0f0f0;
+article {
+  margin: 20px 5px 10px 5px;
+  padding: 20px 15px 15px 15px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  border-width: 5px;
+  border-color: #fff;
+  border-style: solid;
 }
 .sidebar {
-  margin-top: 10px;
-  border-radius: 4px;
-  background-color: #ff9800;
+  margin-top: 20px;
   padding-top: 5px;
   padding-bottom: 50px;
   padding-left: 5px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  border-width: 5px;
+  border-color: #fff;
+  border-style: solid;
 }
-.sidebar-container {
-  padding-left: 0px;
-  padding-right: 0px;
+.sidebar h3 {
+  margin: 0 auto 20px auto;
+  text-align: center;
 }
 .footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
   color: #ff9800;
-  margin-top: 10px;
-  background-color: #673dcb;
-  border-radius: 4px;
-  height: 60px;
+  margin-top: 0px;
+  background-color: #373737;
+  height: 120px;
 }
