@@ -1,3 +1,5 @@
-<div>
-<h1>{{article.title}}<h1>
+<div class="container">
+  <h1>{{article.title}}</h1>
+  <textarea cols="160" rows="40" ng-model="article.content"></textarea>
+  <span ng-bind-html="article.content | textiler"></span>
 </div>

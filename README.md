@@ -8,7 +8,7 @@ ToDo
 * ✓ pagina cliente inicial recuperando informacion de la base
 * ✓ filtro textile
 * campo con tags
-* revisar campos fecha
+* ✓ revisar campos fecha
 * diagramacion de pagina principal
   * ✓ tomar colores de https://www.materialpalette.com/deep-purple/orange
   * ✓ header bootstrap (bg violeta fg naranja ?)
@@ -24,3 +24,12 @@ ToDo
 * pagina de login para poder editar
 * edicion en la pagina del articulo
 * deployment produccion
+
+
+Links interesantes:
+https://github.com/borgar/textile-js
+https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
+https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular
+https://github.com/alexyoung/stextile
+http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html
+https://highlightjs.org/download/

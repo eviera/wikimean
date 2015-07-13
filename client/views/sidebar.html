@@ -2,7 +2,7 @@
 	<h3>articles</h3>
 	<ul>
 		<li ng-repeat="article in articles">
-			{{article.title}}
+			<a href="#/article/{{article._id}}">{{article.title}}</a>
 		</li>
 	</ul>
 </div>
