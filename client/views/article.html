@@ -1,5 +1,6 @@
 <div class="container">
   <h1>{{article.title}}</h1>
+  <input type="submit" class="btn btn-primary" ng-click="saveArticle()" value="Save">
   <textarea cols="160" rows="40" ng-model="article.content"></textarea>
   <span ng-bind-html="article.content | textiler"></span>
 </div>
