@@ -18,6 +18,7 @@ ToDo
   * ✓ centro con el ultimo articulo completo
   * footer con copyright y login
 * migrar articulos del sitio viejo
+* highlightjs
 * filtro para youtube
 * pagina del articulo
 * busqueda por tags
