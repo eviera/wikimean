@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
   </head>
   <body ng-app="wikimeanApp">
@@ -49,10 +50,14 @@
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
     <script src="scripts/libs/textile.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/wiki.js"></script>
     <script src="scripts/controllers/article.js"></script>
     <script src="scripts/controllers/sidebar.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
 </body>
 </html>

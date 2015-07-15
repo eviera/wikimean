@@ -1,0 +1,122 @@
+h2. Invoking jQuery
+
+Via CDN
+
+bc(html). <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="app.js"></script>
+
+In the app.js
+
+bc(js). $(document).ready(function() {
+...
+});
+
+h2. Selectors
+
+* Type selector
+
+Selects all the spans in the page
+
+bc(js). $("span")
+
+* Class selector
+
+Selects all the elements with the 'squared' class
+
+bc(js). $(".squared")
+
+* Id selector
+
+Selects the element named 'box'
+
+bc(js). $("#box")
+
+* Descendant selector
+
+Selects all the li elements inside the elements named 'box' (it will select any li, no matter how deep it is inside the 'box')
+
+bc(js). $("#box li")
+
+* Child selector
+
+Selects only the li which are direct descendants of the 'box'
+
+bc(js). $("#box > li")
+
+* Pseudo selectors
+** :first
+** :last
+** :even (elements starts at 0)
+** :odd
+
+Selects the first li of the ul of class '.bordeaux'
+
+bc(js). $("ul.bordeaux li:first")
+
+
+h2. Traversing
+
+Functions for traversing the DOM
+
+* Find and children
+
+Finds all li elements inside the 'box'
+
+bc(js). $("box").find("li");
+
+Find only the children li element of the 'box' (ignores li elements which are more deeply in the tree)
+
+bc(js). $("box").children("li");
+
+* Traversers
+** first()
+** last()
+** next()
+** prev()
+** parent()
+
+Find all the parents of the elements of class 'pepper'
+
+bc(js). $(".pepper").parent();
+
+h2. Inserting and Removing Elements
+
+* Inserting
+** append(<element>): puts the new element inside and at the bottom of the selected element (as child)
+** prepend(<element>): puts the new element inside and at first place of the selected element (as child)
+** after(<element>): puts the new element after the selected element (as sibling)
+** before(<element>): puts the new element before the selected element (as sibling)
+
+This code creates a new div and inserts it as the first element of the li of class 'raw'
+
+bc(js). var spacer = $("<div>spacer</div>");
+$("li.raw").append(spacer);
+
+* Removing
+
+Removes the selected element from the DOM
+
+bc(js). $("#main_table").remove();
+
+h2. Events
+
+* On Click
+
+Add an on click event to all the boxes
+
+bc(js). $(".box").on("click", function() {
+  ...
+});
+
+With more specificity
+
+Add an on click event to the button inside all the boxes
+
+bc(js). $(".box").on("click", "button", function() {
+  ...
+});
+
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
