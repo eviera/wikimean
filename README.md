@@ -7,7 +7,7 @@ ToDo
 * ✓ armado de base y conexion cliente con restangular
 * ✓ pagina cliente inicial recuperando informacion de la base
 * ✓ filtro textile
-* campo con tags
+* ~~campo con tags~~
 * ✓ revisar campos fecha
 * diagramacion de pagina principal
   * ✓ tomar colores de https://www.materialpalette.com/deep-purple/orange
@@ -19,9 +19,10 @@ ToDo
   * footer con copyright y login
 * migrar articulos del sitio viejo
 * highlightjs
+* probar Restangular.setBaseUrl(location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + location.pathname);
 * filtro para youtube
 * pagina del articulo
-* busqueda por tags
+* ~~busqueda por tags~~
 * pagina de login para poder editar
 * edicion en la pagina del articulo
 * deployment produccion
