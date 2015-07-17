@@ -29,16 +29,12 @@ ToDo
 
 
 Links interesantes:
-http://txstyle.org/
-
-https://github.com/borgar/textile-js
-
-https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
-
-https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular
-
-https://github.com/alexyoung/stextile
-
-http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html
-
-https://highlightjs.org/download/
+* http://txstyle.org/
+* https://github.com/borgar/textile-js
+* https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
+* https://scotch.io/tutorials/creating-a-single-page-todo-app-with-node-and-angular
+* https://github.com/alexyoung/stextile
+* http://alexgorbatchev.com/SyntaxHighlighter/manual/installation.html
+* https://highlightjs.org/download/
+* https://hackhands.com/mongodb-crud-mvc-way-with-passport-authentication/
+* http://stackoverflow.com/questions/18708428/how-to-do-authentication-with-node-js-and-mean-stack
