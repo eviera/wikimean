@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wikimeanApp')
-  .controller('articleCtrl', function ($scope, $routeParams, ArticleRestangular) {
+  .controller('articleCtrl', function ($scope, $routeParams, $timeout, ArticleRestangular) {
     $scope.alert = {};
 
     ArticleRestangular.one('article', $routeParams.id).get().then(function(article) {
@@ -14,5 +14,14 @@ angular.module('wikimeanApp')
           });
         };
     });
+
+    $scope.$watch('article', function() {
+      $timeout(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      });
+    });
+
 
   });
