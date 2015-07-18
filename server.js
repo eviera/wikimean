@@ -8,7 +8,7 @@ var app = express();
 
 // set the static files location /client/img will be /img for users
 app.use(express.static(__dirname + '/client'));
- 
+
 
 // Add Middleware necessary for REST API's
 app.use(bodyParser.urlencoded({extended: true}));
@@ -39,6 +39,27 @@ mongoose.connection.once('open', function() {
 
   app.get('*', function(req, res) {
     res.redirect('/#' + req.originalUrl);
+  });
+
+
+  // catch 404 and forward to error handler
+  app.use(function(req, res, next){
+      res.status(404);
+      log.debug('%s %d %s', req.method, res.statusCode, req.url);
+      res.json({
+      	error: 'Not found'
+      });
+      return;
+  });
+
+  // error handlers
+  app.use(function(err, req, res, next){
+      res.status(err.status || 500);
+      log.error('%s %d %s', req.method, res.statusCode, err.message);
+      res.json({
+      	error: err.message
+      });
+      return;
   });
 
   console.log('Server ready and listening on port 3000...');
