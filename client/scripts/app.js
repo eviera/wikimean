@@ -40,10 +40,15 @@ angular
       controller: 'sidebarCtrl',
       templateUrl: 'views/sidebar.html'
     };
-  })  
+  })
   .filter('textiler', function() {
       return function(input)  {
         input = input || '';
         return textile(input);
       };
+  })
+  .run(function($rootScope, Restangular) {
+    Restangular.one('editmode').get().then(function(serverProp) {
+      $rootScope.isEditMode = serverProp.isEditMode;
+    });
   });
