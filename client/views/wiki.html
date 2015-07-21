@@ -3,6 +3,7 @@
 		<sidebar></sidebar>
 	</div>
 	<div class="col-md-10 article-list">
+		<i class="material-icons md-48 addnew">add</i>
 		<article ng-repeat="article in articles">
 		    <h1><a href="#/article/{{article._id}}">{{article.title}}</a></h1>
 		    <span ng-bind-html="article.content | textiler"></span>

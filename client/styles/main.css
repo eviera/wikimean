@@ -6626,3 +6626,33 @@ article {
   background-color: #373737;
   height: 120px;
 }
+.addnew {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: #ff9800;
+  background-image: none;
+  background-origin: padding-box;
+  background-size: auto;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  top: 30px;
+  box-shadow: rgba(0, 0, 0, 0.227451) 0px 3px 10px 0px, rgba(0, 0, 0, 0.156863) 0px 3px 10px 0px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  height: 56px;
+  outline-color: #ffffff;
+  outline-style: none;
+  outline-width: 0px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  position: absolute;
+  right: 30px;
+  text-align: center;
+  width: 56px;
+}

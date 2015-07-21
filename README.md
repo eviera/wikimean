@@ -38,3 +38,4 @@ Links interesantes:
 * https://highlightjs.org/download/
 * https://hackhands.com/mongodb-crud-mvc-way-with-passport-authentication/
 * http://stackoverflow.com/questions/18708428/how-to-do-authentication-with-node-js-and-mean-stack
+* http://google.github.io/material-design-icons/
