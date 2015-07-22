@@ -34,11 +34,18 @@ angular
   .directive('sidebar', function() {
     return {
       restrict: 'E',
-      scope: {
-        src: '='
-      },
       controller: 'sidebarCtrl',
       templateUrl: 'views/sidebar.html'
+    };
+  })
+  .directive('articleDate', function() {
+    return {
+      restrict: 'E',
+      scope: {
+        article: '='
+      },
+      controller: 'articleDateCtrl',
+      templateUrl: 'views/article-date.html'
     };
   })
   .filter('textiler', function() {
