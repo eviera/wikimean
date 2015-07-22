@@ -23,7 +23,7 @@ ToDo
 * filtro para youtube
 * pagina del articulo
 * ~~busqueda por tags~~
-* pagina de login para poder editar
+* ~~pagina de login para poder editar~~ (se resuelve con modo edit del server)
 * edicion en la pagina del articulo
 * deployment produccion
 

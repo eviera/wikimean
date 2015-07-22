@@ -6598,6 +6598,9 @@ h2 {
   padding-bottom: 30px;
   background-color: #e0e0e0;
 }
+.article-relative {
+  position: relative;
+}
 article {
   margin: 20px 5px 10px 5px;
   padding: 20px 15px 15px 15px;
