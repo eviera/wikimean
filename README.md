@@ -16,14 +16,16 @@ ToDo
     * ✓ puede ser un ng-include que adentro tenga un controller propio
     * ✓ sino puede ser una directiva customizada, como < sidebar /> (la directiva tiene una propiedad controller para asignarle un controller aparte)
   * ✓ centro con el ultimo articulo completo
-  * footer con copyright y login
+  * ✓footer con copyright ~~y login~~
 * migrar articulos del sitio viejo
 * ✓ highlightjs
 * ✓ probar Restangular.setBaseUrl(location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + location.pathname);
 * filtro para youtube
-* pagina del articulo
+* ✓ pagina del articulo
+* poner la fecha del articulo (creacion/modificacion) con una directiva
 * ~~busqueda por tags~~
 * ~~pagina de login para poder editar~~ (se resuelve con modo edit del server)
+* ✓ unificar los controllers en un unico js
 * edicion en la pagina del articulo
 * deployment produccion
 
