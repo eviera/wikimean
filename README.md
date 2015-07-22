@@ -19,7 +19,7 @@ ToDo
   * footer con copyright y login
 * migrar articulos del sitio viejo
 * ✓ highlightjs
-* probar Restangular.setBaseUrl(location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + location.pathname);
+* ✓ probar Restangular.setBaseUrl(location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + location.pathname);
 * filtro para youtube
 * pagina del articulo
 * ~~busqueda por tags~~
