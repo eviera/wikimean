@@ -1,1 +1,1 @@
-<p>created: {{article.created | date : 'dd/MM/yy @ H:mm' : 'GMT-3'}} - modified: {{article.modified | date : 'dd/MM/yy @ H:mm' : 'GMT-3'}}</p>
+<time datetime="{{article.created | date : 'yyyy-MM-dd' : 'GMT-3'}}" ng-show="article.created">{{article.created | date : 'dd MMM yyyy' : 'GMT-3'}}</time>

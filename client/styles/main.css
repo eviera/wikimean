@@ -6588,7 +6588,13 @@ h3 {
   font-family: "Oswald";
 }
 h1 {
-  font-size: 40px;
+  margin-top: 5px;
+  font-size: 45px;
+}
+h1,
+h1 a,
+h1 a:hover {
+  color: #8169b9;
 }
 h2 {
   margin-bottom: 20px;
@@ -6609,6 +6615,10 @@ article {
   border-width: 5px;
   border-color: #fff;
   border-style: solid;
+}
+article time {
+  font-family: "Oswald";
+  font-size: 12px;
 }
 .sidebar {
   margin-top: 20px;
@@ -6636,6 +6646,11 @@ article {
   text-align: center;
   padding-top: 7px;
   padding-bottom: 7px;
+  color: #8169b9;
+}
+.sidebar li a,
+.sidebar li a:hover {
+  color: #8169b9;
 }
 .footer {
   padding-top: 40px;

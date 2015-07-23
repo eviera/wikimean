@@ -51,6 +51,7 @@
 @background-color: #282828;
 @article-background-color: #F7F7F7;
 @footer-height: 120px;
+@title-color: #8169B9;
 
 html {
 }
@@ -64,7 +65,12 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 40px;
+	margin-top: 5px;
+	font-size: 45px;
+}
+
+h1, h1 a, h1 a:hover {
+	color: @title-color;
 }
 
 h2 {
@@ -90,6 +96,11 @@ article {
   border-width: 5px;
   border-color: #fff;
   border-style: solid;
+}
+
+article time {
+	font-family: "Oswald";
+	font-size: 12px;
 }
 
 .sidebar {
@@ -121,6 +132,11 @@ article {
 	text-align: center;
 	padding-top: 7px;
 	padding-bottom: 7px;
+	color: @title-color;
+}
+
+.sidebar li a, .sidebar li a:hover {
+	color: @title-color;
 }
 
 .footer {

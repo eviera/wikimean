@@ -1,6 +1,7 @@
 <div class="container article-relative">
   <article>
     <i ng-show="isEditMode" class="material-icons md-36 circle-icon">create</i>
+    <article-date article="article"></article-date>
     <h1>{{article.title}}</h1>
     <div class="alert alert-success fade in" ng-show="alert.show">
     	{{alert.message}}
@@ -10,6 +11,5 @@
     <textarea cols="160" rows="40" ng-model="article.content"></textarea>
     -->
     <span ng-bind-html="article.content | textiler"></span>
-    <article-date article="article"></article-date>
   </article>
 </div>
