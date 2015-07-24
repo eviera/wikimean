@@ -41,8 +41,12 @@ angular.module('wikimeanApp')
 
   })
   .controller('sidebarCtrl', function ($scope, ArticleRestangular) {
-  	$scope.articles = ArticleRestangular.all('article?sort=-created').getList().$object;
+
+    ArticleRestangular.all('article?sort=-created').getList().then(function(articles) {
+      $scope.sidebarArticles = articles;
+    });
+
   })
   .controller('articleDateCtrl', function ($scope) {
-  	
+
   });
