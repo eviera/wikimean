@@ -121,3 +121,297 @@ bc(js). $(".box").on("click", "button", function() {
 ****************************************************************************
 ****************************************************************************
 ****************************************************************************
+
+h2. Expressions
+
+bc(html). <p>
+I am {{4 + 6}}
+</p>
+
+bc(html). <p>
+{{"hello" + " you"}}
+</p>
+
+h2. Directives
+
+h3. ng-app
+
+Describes the main module of the application
+
+**index.html**
+
+bc(html). <html ng-app="gemStore">
+<script src="app.js"></script>
+
+**app.js:** Example shown with an IIEF ((Immediately Invoked Function Expression)) construct
+
+bc(js). (function() {
+  var app = angular.module('gemStore', []);
+})();
+
+
+**Module Dependencies**
+
+If a module depends on other modules, they have to be declared inside the squared brackets of the angular.module declaration
+
+**index.html**
+
+bc(html). <html ng-app="gemStore">
+<script src="app.js"></script>
+<script src="productStore.js"></script>
+
+
+**productStore.js:** product store module
+
+bc(js). (function() {
+  var app = angular.module('productStore', []);
+})();
+
+
+**app.js:** gemStore requires (and includes) the productStore module
+
+bc(js). (function() {
+  var app = angular.module('gemStore', ['productStore']);
+})();
+
+h3. ng-controller
+
+Defines the application behavior
+
+**index.html**
+
+bc(html). <body ng-controller="StoreController as store">
+  <h2>Product Name: {{store.product.name}}</h2>
+
+**app.js**
+
+bc(js). app.controller('StoreController', function() {
+    this.product =   {
+      name: 'Azurite',
+      description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
+      shine: 8,
+      price: 110.50
+     }
+  });
+
+h2. Services
+
+Example of using the $http service for a GET request inside a controller. The result comes as a [[http://www.html5rocks.com/en/tutorials/es6/promises|Promise]]
+
+The store variable has to be created copying the 'this' reference (the controller) so 'this' can be used inside the success function.
+
+bc(js). app.controller('StoreController', ['$http', function($http){
+      var store = this;
+      store.products = [];
+      $http.get('store-products.json').success(function(data) {
+        store.products = data;
+      });
+    }]);
+
+
+This is an example of the $log service (and the $http as well). Notice the parameter order in the function
+
+bc(js). app.controller('StoreController', ['$http', '$log' function($http, $log){
+      var store = this;
+      store.products = [];
+      $log.info('About to get the products...');
+      $http.get('store-products.json').success(function(data) {
+        store.products = data;
+      });
+    }]);
+
+
+
+"created" : ISODate("2014-07-27T00:00:00-03:00"),
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
+
+
+h2. Selectors
+
+**X** Type selector
+
+bc(html).. h1 {
+  background-color: red;
+}
+
+<h1> Title <h1>
+
+p.
+<br>
+
+**.X** Class selector
+
+bc(html).. .header {
+  color: #ff0a1e;
+}
+
+<section class="header"> Houses <section>
+
+p.
+<br>
+
+**#X** Id selector
+
+bc(html).. #saveButton {
+  margin-top: 5px;
+}
+
+<button id="saveButton">
+
+p.
+<br>
+
+**X.X** Compound selectors
+
+Selects the elements that has BOTH selectors. In this example, it needs to be an <nowiki><h1></nowiki> and it has to have the id 'header'.
+Note that the two selectors are correlatives with no space between them.
+
+bc(html)..
+h1#header {
+  color: white;
+}
+
+<h1 class="intro" id="header">Chapter One</h1>
+
+p.
+<br>
+
+**X X** Descendant selectors
+
+Selects the descendants of the elements. In the example it will select all the elements with class 'green' inside a <nowiki><div></nowiki>  tag.
+Note that it won't matter how deep an element of class 'ready' is inside a div, it will be selected anyways. In the example both the texts 'Another planet' and 'item 1' will be green.
+
+bc(html)..
+div .ready {
+  color: green;
+}
+
+<div>
+  <h1 class="ready">New mission</h1>
+  <h2 class="note">Another planet</h2>
+  <ul>
+    <li class="ready">item 1</li>
+    <li class="note">item 2</li>
+</div>
+
+p.
+<br>
+
+**X > X** Child selector
+
+Only selects the child of the element
+
+bc(html)..
+#saveButton {
+  margin-top: 5px;
+}
+
+<ul class="menu">
+  <li> menu 1 </li>
+  <li> menu 2 </li>
+    <ul class="sub-menu">
+
+  <li> menu 3 </li>
+
+</ul>
+
+p.
+
+
+h2. Cascade Order
+
+In order of priority
+
+  * Using _!important_ at the end of a line in definition
+
+bc(html). .header {
+  color: #ff0a1e !important;
+}
+
+
+
+continuar desde aca
+
+
+
+
+
+
+
+
+  * Inline style
+<code html>
+<h1 style="color: red;">Chapter One</h1>
+</code>
+
+  * In the <head>
+<code html>
+<head>
+  <style>
+  ...
+  </style>
+
+ ...
+</head>
+</code>
+
+  * In an external CSS file
+<code html>
+<head>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+</code>
+
+  * If there are two equal selectors with the same definitions in the same document, the latter definition will override the first. In the following example the header is going to be red
+<code css>
+.header {
+  color: green;
+}
+.header {
+  color: red;
+}
+</code>
+
+  * If there are two equal selectors with different definitions in the same document, the result will mix. In the following example the header is going to be green with black background
+<code css>
+.header {
+  color: green;
+}
+.header {
+  background-color: black;
+}
+</code>
+
+=== Mixing multiple selectors ===
+This example shows a way to add selective behavior to an element by mixing multiple classes
+<code css>
+.box { width: 100px; float: left; margin: 0 10px 10px 0; }
+.red { color: red; background: pink; }
+.blue { color: blue; background: light-blue; }
+.green { color: green; background: light-green; }
+.border { border: 5px solid black; }
+</code>
+
+<code html>
+<div class="red border box"></div>
+<div class="blue border box"></div>
+<div class="green border box"></div>
+<div class="red box"></div>
+<div class="blue box"></div>
+<div class="green box"></div>
+<div class="border box"></div>
+</code>
+
+Any combination can be overridden
+<code css>
+.red.border { border-color: #900; }
+</code>
+
+"created" : ISODate("2014-07-28T00:00:00-03:00"),
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
