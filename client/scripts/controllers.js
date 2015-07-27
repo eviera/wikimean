@@ -1,7 +1,12 @@
 'use strict';
 
 angular.module('wikimeanApp')
-  .controller('articleCtrl', function ($scope, $routeParams, $timeout, $location, ArticleRestangular) {
+  .controller('articleCtrl', function ($scope, $routeParams, $timeout, $location, $sce, ArticleRestangular) {
+
+    $scope.trustSrc = function(src){
+      alert('entro');
+			return $sce.trustAsResourceUrl(src);
+		};
 
     ArticleRestangular.one('article', $routeParams.id).get().then(function(article) {
         $scope.article = article;

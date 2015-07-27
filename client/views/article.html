@@ -3,6 +3,6 @@
     <i ng-show="isEditMode" ng-click="editArticle()" class="material-icons md-36 circle-icon">create</i>
     <article-date article="article"></article-date>
     <h1>{{article.title}}</h1>
-    <span ng-bind-html="article.content | textiler"></span>
+    <span ng-bind-html="article.content | textiler | youtuber"></span>
   </article>
 </div>

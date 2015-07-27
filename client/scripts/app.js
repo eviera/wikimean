@@ -62,6 +62,27 @@ angular
         return textile(input);
       };
   })
+  .filter('youtuber', function() {
+    //La estructura es {{youtube:video_id}}
+    return function(input) {
+      var result = input;
+      var youtubeExp = "{{youtube:";
+      var expStart = input.indexOf(youtubeExp);
+      if (expStart > -1) {
+        var expEnd = input.indexOf("}}", expStart);
+        var firstPart = input.substring(0, expStart);
+        var secondPart = input.substring(expEnd + 2);
+        var videoId = input.substring(expStart + youtubeExp.length, expEnd);
+
+        var youtubeEmbbededHTML='<div >' +
+          '<iframex type="text/html" ng-src="{{ trustSrc(' + videoId  +') }}"></iframe>' +
+          '</div>';
+
+        result = firstPart + youtubeEmbbededHTML + secondPart;
+      }
+      return result;
+    };
+  })
   .run(function($rootScope, Restangular) {
     Restangular.one('editmode').get().then(function(serverProp) {
       $rootScope.isEditMode = serverProp.isEditMode;
