@@ -26,7 +26,7 @@ ToDo
 * ✓ unificar los controllers en un unico js
 * filtro para youtube
 * ✓ edicion en la pagina del articulo
-* nuevo articulo
+* ✓ nuevo articulo
 * migrar articulos del sitio viejo
 * deployment produccion
 

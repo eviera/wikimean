@@ -20,8 +20,12 @@ angular
         controller: 'articleCtrl'
       })
       .when('/article/:id/edit', {
-        templateUrl: 'views/article-edit.html',
+        templateUrl: 'views/article-add-edit.html',
         controller: 'articleEditCtrl'
+      })
+      .when('/create/article', {
+        templateUrl: 'views/article-add-edit.html',
+        controller: 'articleAddCtrl'
       })
       .otherwise({
         redirectTo: '/'

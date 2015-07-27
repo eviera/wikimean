@@ -36,7 +36,27 @@ angular.module('wikimeanApp')
     });
 
   })
-  .controller('wikiCtrl', function ($scope, $timeout, ArticleRestangular) {
+  .controller('articleAddCtrl', function ($scope, $location, ArticleRestangular) {
+    $scope.article = {};
+
+    $scope.saveArticle = function () {
+      $scope.article.created = new Date();
+      $scope.article.modified = new Date();
+      ArticleRestangular.all('article').post($scope.article).then(function () {
+        $location.path('/article');
+      });
+    };
+
+    $scope.cancel = function () {
+      $location.path('/article');
+    };
+
+  })
+  .controller('wikiCtrl', function ($scope, $timeout, $location, ArticleRestangular) {
+
+    $scope.addArticle = function () {
+      $location.path('/create/article');
+    };
 
   	ArticleRestangular.all('article?limit=1&sort=-created').getList().then(function(articles) {
       $scope.articles = articles;
