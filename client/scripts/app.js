@@ -19,6 +19,10 @@ angular
         templateUrl: 'views/article.html',
         controller: 'articleCtrl'
       })
+      .when('/article/:id/edit', {
+        templateUrl: 'views/article-edit.html',
+        controller: 'articleEditCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

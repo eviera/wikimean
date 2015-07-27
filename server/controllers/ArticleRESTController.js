@@ -24,8 +24,12 @@ module.exports = function(app, route) {
 */
 
   function checkAuth(req, res, next) {
-    console.log('pasando por la autenticacion antes de [' + req.method + ']');
-    next();
+    if (app.isEditMode) {
+      next();
+    } else {
+      console.log('Se llamo a [' + req.method + '] pero la app no esta en modo edit');
+      res.status(401).send('No esta autorizado a ejecutar [' + req.method + ']');
+    }
   }
 
 

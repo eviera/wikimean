@@ -1,17 +1,12 @@
 'use strict';
 
 angular.module('wikimeanApp')
-  .controller('articleCtrl', function ($scope, $routeParams, $timeout, ArticleRestangular) {
-    $scope.alert = {};
+  .controller('articleCtrl', function ($scope, $routeParams, $timeout, $location, ArticleRestangular) {
 
     ArticleRestangular.one('article', $routeParams.id).get().then(function(article) {
-        $scope.alert.show = false;
         $scope.article = article;
-        $scope.saveArticle = function () {
-          $scope.article.save().then(function () {
-            $scope.alert.show = true;
-            $scope.alert.message = "Article saved";
-          });
+        $scope.editArticle = function () {
+          $location.path('/article/' + $routeParams.id + '/edit');
         };
     });
 
@@ -21,6 +16,23 @@ angular.module('wikimeanApp')
           hljs.highlightBlock(block);
         });
       });
+    });
+
+  })
+  .controller('articleEditCtrl', function ($scope, $routeParams, $location, ArticleRestangular) {
+
+    ArticleRestangular.one('article', $routeParams.id).get().then(function(article) {
+        $scope.article = article;
+        $scope.saveArticle = function () {
+          $scope.article.modified = new Date();
+          $scope.article.save().then(function () {
+            $location.path('/article/' + $routeParams.id);
+          });
+        };
+        $scope.cancel = function () {
+          $location.path('/article/' + $routeParams.id);
+        };
+
     });
 
   })

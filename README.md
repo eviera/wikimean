@@ -25,8 +25,9 @@ ToDo
 * ~~pagina de login para poder editar~~ (se resuelve con modo edit del server)
 * ✓ unificar los controllers en un unico js
 * filtro para youtube
+* ✓ edicion en la pagina del articulo
+* nuevo articulo
 * migrar articulos del sitio viejo
-* edicion en la pagina del articulo
 * deployment produccion
 
 

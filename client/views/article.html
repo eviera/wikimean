@@ -1,14 +1,8 @@
 <div class="container article-relative">
   <article>
-    <i ng-show="isEditMode" class="material-icons md-36 circle-icon">create</i>
+    <i ng-show="isEditMode" ng-click="editArticle()" class="material-icons md-36 circle-icon">create</i>
     <article-date article="article"></article-date>
     <h1>{{article.title}}</h1>
-    <div class="alert alert-success fade in" ng-show="alert.show">
-    	{{alert.message}}
-    </div>
-    <!-- -->
-    <input type="submit" class="btn btn-primary" ng-click="saveArticle()" value="Save">
-    <textarea cols="160" rows="40" ng-model="article.content"></textarea>
     <span ng-bind-html="article.content | textiler"></span>
   </article>
 </div>
