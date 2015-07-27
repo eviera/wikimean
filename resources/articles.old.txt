@@ -438,3 +438,177 @@ Any combination can be overridden
 ****************************************************************************
 ****************************************************************************
 ****************************************************************************
+
+==== Git: Simple Reference Guide ====
+
+For a more explanatory guide: http://git-scm.com/book
+
+=== Basic Commands ===
+
+== git file status lifecycle ==
+There are 4 states in the life of file in a git project:
+  * Untracked: the file is not yet managed
+  * Unmodified: the file is managed by Git, but it was not yet modified
+  * Modified: the file changed but it is not staged
+  * Staged: the file can be commited
+
+| {{ :gitlifecycle.png |}} |
+| image taken from http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository |
+
+== git init ==
+Initializes a new repository. The folder where the command is run will be the place where the .git folder will be created. This folder contains ALL the code, versions, branches, ever tracked by this git project.
+
+The command can be run in a new folder, or in an existent one that already has files
+
+<code bash>
+git init
+</code>
+
+== git status ==
+As the name implies, it shows the status of the current project.
+
+<code bash>
+git status
+</code>
+
+== git add ==
+The add command has two main functions, one is to add a file or files to the git tracking (the file or files are now ready to be commited), and the other is to add modified files to the stage (so they can be commited)
+
+In summary:
+  * For a new file: git starts to track the file and it's ready for commit
+  * For a modified file: git puts the file in the stage so it can be commited
+
+The add command works recursively if the path used is a directory
+
+In a normal workflow, before every commit a git add should be performed over the modified files
+
+<code bash>
+# To add an individual file
+git add file.txt
+# To add multiple files (i.e.: all the txts)
+git add '*.txt'
+# To add all the files
+git add .
+</code>
+
+== git commit ==
+Commits the files from the staging area (and olny in the staging area. If a file is modified but not addeded to the stage, it will not be commited). The files are now in the git vault and can be 'pulled' (copied) for another person to use.
+
+In the basic form of the command a message is passed as a commentary of the commit. If no message is passed (and the -m parameter is omitted), and editor windows will open so the user can enter the comment there.
+
+<code bash>
+git commit -m "comments of the commit"
+</code>
+
+
+== git log ==
+List the commits ordered by last first.
+
+<code bash>
+# List commits in one line
+git log --pretty=oneline
+</code>
+
+=== GitHub operation ===
+
+== git remote ==
+Shows the remote repositories connected to this git project (the '-v' parameter also shows the remote's urls)
+<code bash>
+git remote -v
+</code>
+
+To inspect a remote and see if our local repository is up to date or not run the git remote show origin command
+<code bash>
+git remote show origin
+</code>
+
+
+== git clone ==
+To retrieve a working copy of a project use the git clone command. It downloads all the files in the remote repository with the last commit along with all the history of changes inside the .git directory (which will be created)
+
+The name of the remote repository by default is 'origin'. It can be changed with the '-o' parameter
+
+This clone command:
+<code bash>
+git clone git://github.com/schacon/ticgit.git
+</code>
+
+Will create a directory called ticgit with all the files on that project (and the .git directory too)
+
+== git pull ==
+To fetch and merge changes from the remote repository, use the git pull command which will download all the changes and then merge them with the project
+<code bash>
+git pull
+</code>
+
+== git push ==
+To submit the commited changes to the remote repository, use the git push command. If the local copy is not up to date with the repository the push will be rejected (and a pull will have to be done first)
+<code bash>
+git push
+</code>
+
+=== A bit more advanced ===
+
+== .gitignore ==
+This file is used to mark the files that you never want to track. It can use some kind of regular expressions
+If the files are not preceded with a slash, it will work recursively
+
+<code bash>
+# Example of a .gitignore file
+
+# Ignore all the files named .classpath in all the directories
+.classpath
+# Ignore the file named presentation.bmp only in the root directory (not recursive)
+/presentation.bmp
+# Ignore all the files with .bin extension
+*.bin
+# Do track printable.bin, even if the previous line say the contrary (with the bang)
+!printable.bin
+</code>
+
+== Removing files ==
+To remove a file, first a git rm command has to be issued, followed by a git commit.
+The git rm deletes the file from the disk and moves to the staging the deletion of the file
+The git commit proceeds to delete it from the git vault
+
+<code bash>
+# First, erase the file and mark it as stagged
+git rm file.txt
+# Now, commit the deletion
+git commit -m "the file has been erased"
+</code>
+
+== Undoing changes ==
+To remove a file from the staging area (and move it to the modified files)
+<code bash>
+git reset HEAD filetounstage.txt
+</code>
+
+To revert the changes of a modified file to the version last commited (WARNING: THE CHANGES ON THE FILE WILL BE LOST)
+<code bash>
+git checkout -- filetorevert.txt
+</code>
+
+== gitk ==
+This command shows a graphical interface with the tree of the project, all the commits, and tools for searching and showing differences
+
+<code bash>
+gitk
+</code>
+
+== Fixing the last commit ==
+If a file was forgot to a commit, or the commit comment was wrong, it can be fixed using the '--amend' parameter.
+If the '-m' parameter is specified, the comment will be changed, if it's not, the comment editor will be opened with the former comment
+
+<code bash>
+# The file test.txt was not included in the last commit, but belongs to it
+# First, the file must be stagged
+git add test.txt
+# Next, the commit must be fixed
+git commit --amend -m "this comment replaces the previous for the last commit"
+</code>
+
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
