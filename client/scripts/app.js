@@ -62,7 +62,7 @@ angular
         return textile(input);
       };
   })
-  .filter('youtuber', function() {
+  .filter('youtuber', function($sce) {
     //La estructura es {{youtube:video_id}}
     return function(input) {
       var result = input;
@@ -74,11 +74,12 @@ angular
         var secondPart = input.substring(expEnd + 2);
         var videoId = input.substring(expStart + youtubeExp.length, expEnd);
 
-        var youtubeEmbbededHTML='<div >' +
-          '<iframex type="text/html" ng-src="{{ trustSrc(' + videoId  +') }}"></iframe>' +
+        //no es muy elegante, pero funciona
+        var youtubeEmbbededHTML='<div>' +
+          '<iframe type="text/html" src="http://www.youtube.com/embed/' + videoId  +'"></iframe>' +
           '</div>';
 
-        result = firstPart + youtubeEmbbededHTML + secondPart;
+        result = $sce.trustAsHtml(firstPart + youtubeEmbbededHTML + secondPart);
       }
       return result;
     };
