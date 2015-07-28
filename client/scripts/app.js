@@ -75,9 +75,9 @@ angular
         var videoId = input.substring(expStart + youtubeExp.length, expEnd);
 
         //no es muy elegante, pero funciona
-        var youtubeEmbbededHTML='<div>' +
-          '<iframe type="text/html" src="http://www.youtube.com/embed/' + videoId  +'"></iframe>' +
-          '</div>';
+        var youtubeEmbbededHTML='<div class="row"><div class="col-sm-8"><div class="embed-responsive embed-responsive-16by9">' +
+          '<iframe class="embed-responsive-item" type="text/html" src="http://www.youtube.com/embed/' + videoId  +'"></iframe>' +
+          '</div></div></div>';
 
         result = $sce.trustAsHtml(firstPart + youtubeEmbbededHTML + secondPart);
       }
