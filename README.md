@@ -27,6 +27,7 @@ ToDo
 * ✓ filtro para youtube
 * ✓ edicion en la pagina del articulo
 * ✓ nuevo articulo
+* dar formato a las tablas que estan dentro del articulo (caso articulo UTF-8)
 * migrar articulos del sitio viejo
 * deployment produccion
 
