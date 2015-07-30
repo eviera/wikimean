@@ -6620,6 +6620,60 @@ article time {
   font-family: "Oswald";
   font-size: 12px;
 }
+article table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+}
+article table > thead > tr > th,
+article table > tbody > tr > th,
+article table > tfoot > tr > th,
+article table > thead > tr > td,
+article table > tbody > tr > td,
+article table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+article table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+article table > caption + thead > tr:first-child > th,
+article table > colgroup + thead > tr:first-child > th,
+article table > thead:first-child > tr:first-child > th,
+article table > caption + thead > tr:first-child > td,
+article table > colgroup + thead > tr:first-child > td,
+article table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+article table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+article table .table {
+  background-color: #ffffff;
+}
+article table > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+article table > thead > tr > th,
+article table > tbody > tr > th,
+article table > tfoot > tr > th,
+article table > thead > tr > td,
+article table > tbody > tr > td,
+article table > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+article table > thead > tr > th,
+article table > thead > tr > td {
+  border-bottom-width: 2px;
+}
+article table th {
+  font-size: medium;
+  background-color: #e4d8f9;
+}
 .sidebar {
   margin-top: 20px;
   padding-top: 5px;

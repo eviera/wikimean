@@ -27,7 +27,9 @@ ToDo
 * ✓ filtro para youtube
 * ✓ edicion en la pagina del articulo
 * ✓ nuevo articulo
-* dar formato a las tablas que estan dentro del articulo (caso articulo UTF-8)
+* ✓ dar formato a las tablas que estan dentro del articulo (caso articulo UTF-8)
+* hacer que las tablas sean responsivas
+* hacer que la textarea del editor sea responsiva
 * migrar articulos del sitio viejo
 * deployment produccion
 
