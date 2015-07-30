@@ -10,13 +10,7 @@ angular.module('wikimeanApp')
         };
     });
 
-    $scope.$watch('article', function() {
-      $timeout(function() {
-        $('pre code').each(function(i, block) {
-          hljs.highlightBlock(block);
-        });
-      });
-    });
+    postDecorate('article', $scope, $timeout);
 
   })
   .controller('articleEditCtrl', function ($scope, $routeParams, $location, ArticleRestangular) {
@@ -62,14 +56,7 @@ angular.module('wikimeanApp')
       $scope.articles = articles;
     });
 
-    //Vigilo la variable 'articles' y cuando cambia, ejecuto el jquery que highlightea los bloques de codigo
-    $scope.$watch('articles', function() {
-      $timeout(function() {
-        $('pre code').each(function(i, block) {
-          hljs.highlightBlock(block);
-        });
-      });
-    });
+    postDecorate('articles', $scope, $timeout);
 
   })
   .controller('sidebarCtrl', function ($scope, ArticleRestangular) {
@@ -82,3 +69,23 @@ angular.module('wikimeanApp')
   .controller('articleDateCtrl', function ($scope) {
 
   });
+
+
+
+// Funciones auxiliares
+function postDecorate(target, $scope, $timeout) {
+  $scope.$watch(target, function() {
+    $timeout(function() {
+
+      //Highlighting de los bloques de codigo
+      $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+      });
+
+      //Se encierran las tablas en un div para hacerlas responsivas
+      $('table').each(function () {
+          $(this).wrap('<div class="table-responsive">');
+      });
+    });
+  });
+}
