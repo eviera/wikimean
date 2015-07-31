@@ -32,6 +32,7 @@ ToDo
 * hacer que la textarea del editor sea responsiva
 * migrar las clases de youtuber a una sola clase con mixins en main.less
 * migrar articulos del sitio viejo
+* link footer GitHub
 * deployment produccion
 
 
