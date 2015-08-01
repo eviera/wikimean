@@ -1,3 +1,5 @@
+JQuery
+
 h2. Invoking jQuery
 
 Via CDN
@@ -121,6 +123,7 @@ bc(js). $(".box").on("click", "button", function() {
 ****************************************************************************
 ****************************************************************************
 ****************************************************************************
+Angular
 
 h2. Expressions
 
@@ -227,7 +230,7 @@ bc(js). app.controller('StoreController', ['$http', '$log' function($http, $log)
 ****************************************************************************
 ****************************************************************************
 ****************************************************************************
-
+CSS
 
 h2. Selectors
 
@@ -404,6 +407,7 @@ bc(css). .red.border { border-color: #900; }
 ****************************************************************************
 ****************************************************************************
 ****************************************************************************
+Git
 
 For a more explanatory guide: "http://git-scm.com/book":http://git-scm.com/book
 
@@ -581,6 +585,7 @@ git commit --amend -m "this comment replaces the previous for the last commit"
 ****************************************************************************
 ****************************************************************************
 ****************************************************************************
+UTF-8
 
 h3. Hints:
 
@@ -610,3 +615,34 @@ h3. How does the encoding works
 <br>
 
 {{youtube:MijmeoH9LT4}}
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
+PM2
+
+h2. Process Manager for Node.js
+
+h3. Reference
+
+"https://github.com/Unitech/pm2":https://github.com/Unitech/pm2
+
+h3. Add to startup
+
+bc(bash). # pm2 startup
+
+This adds a script to <code>/Users/emi/Library/LaunchAgents/io.keymetrics.PM2.plist</code>
+
+h3. Remove from startup
+
+bc(bash). # launchctl list | grep pm2
+# sudo launchctl remove <pm2-agent-name>
+
+h3. Common tasks
+
+* Start server: <code># pm2 start server.js</code>
+* Start server with command line arguments: <code># pm2 start server.js -- arguments</code>
+* Start server with production environment: <code># NODE_ENV=production pm2 start server.js </code>. This survives reboot.
+* Stop server: <code># pm2 stop server</code>
+* Remove server from monitor: <code># pm2 delete server</code>
+* List current services: <code># pm2 list</code>

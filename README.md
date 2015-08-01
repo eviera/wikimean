@@ -34,8 +34,9 @@ ToDo
 * migrar articulos del sitio viejo
 * ✓ link footer GitHub
 * deployment produccion
-  * configurar pm2
-  * levantar automaticamente mongo
+** configurar pm2
+** levantar automaticamente mongo
+** dar de baja el apache del startup
 
 
 Links interesantes:
