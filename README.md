@@ -33,10 +33,13 @@ ToDo
 * ~~migrar las clases de youtuber a una sola clase con mixins en main.less~~
 * migrar articulos del sitio viejo
 * ✓ link footer GitHub
+* llevar la sidebar dentro de los articulos
 * deployment produccion
-** configurar pm2
-** levantar automaticamente mongo
-** dar de baja el apache del startup
+  * ✓ configurar pm2
+  * ✓ levantar automaticamente mongo
+  * ✓ dar de baja el apache del startup
+  * modificar puerto server
+  * hacer NAT en el router
 
 
 Links interesantes:
