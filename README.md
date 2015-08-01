@@ -30,10 +30,12 @@ ToDo
 * ✓ dar formato a las tablas que estan dentro del articulo (caso articulo UTF-8)
 * ✓ hacer que las tablas sean responsivas
 * hacer que la textarea del editor sea responsiva
-* migrar las clases de youtuber a una sola clase con mixins en main.less
+* ~~migrar las clases de youtuber a una sola clase con mixins en main.less~~
 * migrar articulos del sitio viejo
-* link footer GitHub
+* ✓ link footer GitHub
 * deployment produccion
+  * configurar pm2
+  * levantar automaticamente mongo
 
 
 Links interesantes:
