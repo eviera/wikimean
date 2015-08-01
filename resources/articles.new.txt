@@ -646,3 +646,47 @@ h3. Common tasks
 * Stop server: <code># pm2 stop server</code>
 * Remove server from monitor: <code># pm2 delete server</code>
 * List current services: <code># pm2 list</code>
+
+
+****************************************************************************
+****************************************************************************
+****************************************************************************
+MongoDB
+
+h2. Startup
+
+Create a plist with:
+
+bc(bash). # sudo atom /Library/LaunchDaemons/org.mongo.mongod.plist
+
+bc(xml). <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>org.mongo.mongod</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/mongod</string>
+        <string>--dbpath</string>
+        <string>/data/db/</string>
+        <string>--logpath</string>
+        <string>/var/log/mongodb.log</string>
+    </array>
+</dict>
+</plist>
+
+Create the log file
+
+bc(bash). # sudo touch /var/log/mongodb.log
+
+Change permissons to the plist
+
+bc(bash). # sudo chown root:wheel /Library/LaunchDaemons/org.mongo.mongod.plist
+
+And start the service with:
+
+bc(bash). # sudo launchctl load /Library/LaunchDaemons/org.mongo.mongod.plist
+# sudo launchctl start org.mongo.mongod
