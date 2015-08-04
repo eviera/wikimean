@@ -34,6 +34,7 @@ ToDo
 * migrar articulos del sitio viejo
 * ✓ link footer GitHub
 * llevar la sidebar dentro de los articulos
+* favico
 * deployment produccion
   * ✓ configurar pm2
   * ✓ levantar automaticamente mongo
