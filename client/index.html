@@ -35,7 +35,14 @@
       </div><!--/.container-fluid -->
     </nav>
 
-    <div class="central" ng-view=""></div>
+    <div class="central">
+      <div class="container">
+      	<div class="col-md-2">
+      		<sidebar></sidebar>
+      	</div>
+      	<div class="col-md-10" ng-view=""></div>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="container">

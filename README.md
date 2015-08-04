@@ -35,6 +35,7 @@ ToDo
 * ✓ link footer GitHub
 * ✓ llevar la sidebar dentro de los articulos
 * favico
+* hacer que <code> sea responsivo (ver caso PM2)
 * deployment produccion
   * ✓ configurar pm2
   * ✓ levantar automaticamente mongo
