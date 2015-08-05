@@ -42,7 +42,8 @@ ToDo
   * ✓ dar de baja el apache del startup
   * ✓ modificar puerto server
   * ✓ hacer NAT en el router
-
+* recolectar estadisticas de node (quien se conecta)
+* ver si habilitar o no google analytics
 
 Links interesantes:
 * http://txstyle.org/
