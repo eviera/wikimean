@@ -31,7 +31,7 @@ ToDo
 * ✓ hacer que las tablas sean responsivas
 * ✓ hacer que la textarea del editor sea responsiva
 * ~~migrar las clases de youtuber a una sola clase con mixins en main.less~~
-* migrar articulos del sitio viejo
+* ✓ migrar articulos del sitio viejo
 * ✓ link footer GitHub
 * ✓ llevar la sidebar dentro de los articulos
 * ✓ favico
@@ -40,7 +40,7 @@ ToDo
   * ✓ configurar pm2
   * ✓ levantar automaticamente mongo
   * ✓ dar de baja el apache del startup
-  * modificar puerto server
+  * ✓ modificar puerto server
   * hacer NAT en el router
 
 

@@ -66,7 +66,7 @@ mongoose.connection.once('open', function() {
       return;
   });
 
-  console.log('Server listo en puerto 3000. Modo edit: [' + app.isEditMode + ']. Entorno [' + process.env.NODE_ENV + ']');
+  console.log('Server listo en puerto 8000. Modo edit: [' + app.isEditMode + ']. Entorno [' + process.env.NODE_ENV + ']');
 
-  app.listen(3000);
+  app.listen(8000);
 });
