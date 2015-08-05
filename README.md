@@ -36,12 +36,12 @@ ToDo
 * ✓ llevar la sidebar dentro de los articulos
 * ✓ favico
 * hacer que el tag "code" sea responsivo (ver caso PM2)
-* deployment produccion
+* ✓ deployment produccion
   * ✓ configurar pm2
   * ✓ levantar automaticamente mongo
   * ✓ dar de baja el apache del startup
   * ✓ modificar puerto server
-  * hacer NAT en el router
+  * ✓ hacer NAT en el router
 
 
 Links interesantes:
