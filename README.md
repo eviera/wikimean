@@ -35,6 +35,7 @@ ToDo
 * ✓ link footer GitHub
 * ✓ llevar la sidebar dentro de los articulos
 * ✓ favico
+* ✓ imagenes responsivas
 * hacer que el tag "code" sea responsivo (ver caso PM2)
 * ✓ deployment produccion
   * ✓ configurar pm2
