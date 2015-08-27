@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('wikimeanApp')
-  .controller('articleCtrl', function ($scope, $routeParams, $timeout, $location, ArticleRestangular) {
+  .controller('articleCtrl', function ($scope, $routeParams, $timeout, $location, ArticleRestangular, Analytics) {
+    Analytics.trackPage('/article/' + $routeParams.id);
 
     ArticleRestangular.one('article', $routeParams.id).get().then(function(article) {
         $scope.article = article;
@@ -13,7 +14,8 @@ angular.module('wikimeanApp')
     postDecorate('article', $scope, $timeout);
 
   })
-  .controller('articleEditCtrl', function ($scope, $routeParams, $location, ArticleRestangular) {
+  .controller('articleEditCtrl', function ($scope, $routeParams, $location, ArticleRestangular, Analytics) {
+    Analytics.trackPage('/article/' + $routeParams.id + '/edit');
 
     ArticleRestangular.one('article', $routeParams.id).get().then(function(article) {
         $scope.article = article;
@@ -30,7 +32,9 @@ angular.module('wikimeanApp')
     });
 
   })
-  .controller('articleAddCtrl', function ($scope, $location, ArticleRestangular) {
+  .controller('articleAddCtrl', function ($scope, $location, ArticleRestangular, Analytics) {
+    Analytics.trackPage('/create/article';
+
     $scope.article = {};
 
     $scope.saveArticle = function () {
@@ -46,7 +50,8 @@ angular.module('wikimeanApp')
     };
 
   })
-  .controller('wikiCtrl', function ($scope, $timeout, $location, ArticleRestangular) {
+  .controller('wikiCtrl', function ($scope, $timeout, $location, ArticleRestangular, Analytics) {
+    Analytics.trackPage('/');
 
     $scope.addArticle = function () {
       $location.path('/create/article');

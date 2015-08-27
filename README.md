@@ -44,7 +44,7 @@ ToDo
   * ✓ modificar puerto server
   * ✓ hacer NAT en el router
 * recolectar estadisticas de node (quien se conecta)
-* ver si habilitar o no google analytics
+* ✓ habilitar google analytics (ver: https://github.com/revolunet/angular-google-analytics)
 
 Links interesantes:
 * http://txstyle.org/

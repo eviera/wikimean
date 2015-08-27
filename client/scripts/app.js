@@ -4,9 +4,10 @@ angular
   .module('wikimeanApp', [
     'ngRoute',
     'restangular',
-    'ngSanitize'
+    'ngSanitize',
+    'angular-google-analytics'
   ])
-  .config(function ($routeProvider, RestangularProvider) {
+  .config(function ($routeProvider, RestangularProvider, AnalyticsProvider) {
 
     RestangularProvider.setBaseUrl(location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + location.pathname + 'rest');
 
@@ -30,6 +31,9 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    AnalyticsProvider.setAccount('UA-10140464-2');
+    AnalyticsProvider.trackPages(true);
 
   })
   .factory('ArticleRestangular', function(Restangular) {  //Para reemplazar los IDs
@@ -84,7 +88,7 @@ angular
       return result;
     };
   })
-  .run(function($rootScope, Restangular) {
+  .run(function($rootScope, Restangular, Analytics) {
     Restangular.one('editmode').get().then(function(serverProp) {
       $rootScope.isEditMode = serverProp.isEditMode;
     });
