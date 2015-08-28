@@ -33,7 +33,7 @@ angular.module('wikimeanApp')
 
   })
   .controller('articleAddCtrl', function ($scope, $location, ArticleRestangular, Analytics) {
-    Analytics.trackPage('/create/article';
+    Analytics.trackPage('/create/article');
 
     $scope.article = {};
 
