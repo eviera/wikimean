@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var _ = require('lodash');
+var requestIp = require('request-ip');
 
 var app = express();
 
@@ -35,6 +36,13 @@ mongoose.connection.once('open', function() {
 
   // Load the models.
   app.models = require('./server/models/index');
+
+  //Log
+  app.use(function(req, res, next) {
+    var clientIp = requestIp.getClientIp(req);
+    console.log("Connction from [" + clientIp + "] for [" + req.url + "]");
+    next();
+  });
 
   // Load the routes.
   var routes = require('./server/routes');
