@@ -580,6 +580,12 @@ git add test.txt
 git commit --amend -m "this comment replaces the previous for the last commit"
 
 
+h2. Troubleshooting
+
+Problem: On git pull, error message "There is no tracking information for the current branch."
+
+Solution: @git branch --set-upstream-to=origin/master master@
+
 "created" : ISODate("2014-07-29T00:00:00-03:00"),
 
 ****************************************************************************
