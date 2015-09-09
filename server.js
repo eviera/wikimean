@@ -23,9 +23,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-//Ve si el server fue levantado en modo edit
-app.isEditMode = process.argv.slice(2) == 'edit';
+//Puerto
+app.listenPort = process.argv[2] || 8000;
 
+//Ve si el server fue levantado en modo edit
+app.isEditMode = process.argv[3] == 'edit';
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost/wikimean');
@@ -66,7 +68,7 @@ mongoose.connection.once('open', function() {
       return;
   });
 
-  console.log('Server listo en puerto 8000. Modo edit: [' + app.isEditMode + ']. Entorno [' + process.env.NODE_ENV + ']');
+  console.log('Server listo en puerto [' + app.listenPort + ']. Modo edit: [' + app.isEditMode + ']. Entorno [' + process.env.NODE_ENV + ']');
 
-  app.listen(8000);
+  app.listen(app.listenPort);
 });
