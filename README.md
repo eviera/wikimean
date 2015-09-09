@@ -43,7 +43,7 @@ ToDo
   * ✓ dar de baja el apache del startup
   * ✓ modificar puerto server
   * ✓ hacer NAT en el router
-* recolectar estadisticas de node (quien se conecta)
+* recolectar estadisticas de node (quien se conecta) (ver: https://www.npmjs.com/package/request-ip y https://github.com/nomiddlename/log4js-node)
 * ✓ habilitar google analytics (ver: https://github.com/revolunet/angular-google-analytics)
 
 Links interesantes:
