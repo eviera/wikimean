@@ -632,6 +632,7 @@ h2. Process Manager for Node.js
 h3. Reference
 
 "https://github.com/Unitech/pm2":https://github.com/Unitech/pm2
+"http://pm2.keymetrics.io/docs/usage/quick-start/":http://pm2.keymetrics.io/docs/usage/quick-start/
 
 h3. Add to startup
 
