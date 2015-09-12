@@ -4,6 +4,15 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var _ = require('lodash');
 var requestIp = require('request-ip');
+var winston = require('winston');
+
+
+var logger = new (winston.Logger)({
+   transports: [
+     new (winston.transports.Console)(),
+     new (winston.transports.File)({ filename: 'server/log/wikimean.log' })
+   ]
+ });
 
 var app = express();
 
@@ -40,7 +49,7 @@ mongoose.connection.once('open', function() {
   //Log
   app.use(function(req, res, next) {
     var clientIp = requestIp.getClientIp(req);
-    console.log("Connction from [" + clientIp + "] for [" + req.url + "]");
+    logger.info("Connction from [" + clientIp + "] for [" + req.url + "]");
     next();
   });
 
@@ -59,7 +68,7 @@ mongoose.connection.once('open', function() {
   // catch 404 and forward to error handler
   app.use(function(req, res, next) {
       res.status(404);
-      console.log("DEBUG method [" + req.method + "], statusCode ["  + res.statusCode + "], url [" + req.url + "]")
+      logger.info("Method [" + req.method + "], statusCode ["  + res.statusCode + "], url [" + req.url + "]")
       res.json({
       	error: 'Not found'
       });
@@ -69,14 +78,14 @@ mongoose.connection.once('open', function() {
   // error handlers
   app.use(function(err, req, res, next) {
       res.status(err.status || 500);
-      console.log("ERROR method [" + req.method + "], statusCode ["  + res.statusCode + "], message [" + err.message + "]")
+      logger.error("Method [" + req.method + "], statusCode ["  + res.statusCode + "], message [" + err.message + "]")
       res.json({
       	error: err.message
       });
       return;
   });
 
-  console.log('Server listo en puerto [' + app.listenPort + ']. Modo edit: [' + app.isEditMode + ']. Entorno [' + process.env.NODE_ENV + ']');
+  logger.info('Server listo en puerto [' + app.listenPort + ']. Modo edit: [' + app.isEditMode + ']. Entorno [' + process.env.NODE_ENV + ']');
 
   app.listen(app.listenPort);
 });
