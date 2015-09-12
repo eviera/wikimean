@@ -7,10 +7,11 @@ var requestIp = require('request-ip');
 var winston = require('winston');
 
 
+var logEnv = process.env.NODE_ENV || 'development';
 var logger = new (winston.Logger)({
    transports: [
      new (winston.transports.Console)(),
-     new (winston.transports.File)({ filename: 'server/log/wikimean.log' })
+     new (winston.transports.File)({ filename: 'log/wikimean.' + logEnv + '.log' })
    ]
  });
 
